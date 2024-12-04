@@ -2,7 +2,7 @@
   <q-page class="q-pa-md">
     <q-card dark bordered class="bg-grey-9 my-card">
       <q-card-section>
-        <q-img src="https://cdn.discordapp.com/attachments/486217640860450816/1313943978835443844/talenthub.jpg?ex=6751f930&is=6750a7b0&hm=2f25c06c5847d2e7534dedb742a0407cc9e40688b15246e93c78d4f5dea707ac&">
+        <q-img src="https://cdn.discordapp.com/attachments/399927078490865674/1313957481780740170/talenthub-poboljsanaSlika.png?ex=675205c3&is=6750b443&hm=e48dc649c6171795d0f2675471b8afe95d15ebd1a54212bf025bf5d738739a78&">
           <div class="text-h3 text-weight-bolder absolute-bottom text-center">
             O nama
           </div>
