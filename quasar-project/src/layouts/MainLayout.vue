@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh lpR fFf">
+  <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -10,28 +10,55 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
-        <q-toolbar-title class="text-h5 text-weight-bold">
-          Talenthub
+        <q-toolbar-title>
+          TalentHub Platform
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item-label header>Izbornik</q-item-label>
-
-        <q-item v-for="link in linksList" :key="link.title" clickable :to="link.link">
+        <q-item to="/" clickable v-ripple>
           <q-item-section avatar>
-            <q-icon :name="link.icon" />
+            <q-icon name="home" />
           </q-item-section>
-          <q-item-section>
-            <q-item-label>{{ link.title }}</q-item-label>
-            <q-item-label caption>{{ link.caption }}</q-item-label>
+          <q-item-section>Početna</q-item-section>
+        </q-item>
+        <q-item to="/freelanceri" clickable v-ripple>
+          <q-item-section avatar>
+            <q-icon name="people" />
           </q-item-section>
+          <q-item-section>Freelanceri</q-item-section>
+        </q-item>
+        <q-item to="/kategorije_usluga" clickable v-ripple>
+          <q-item-section avatar>
+            <q-icon name="category" />
+          </q-item-section>
+          <q-item-section>Kategorije Usluga</q-item-section>
+        </q-item>
+        <q-item to="/narudzbe" clickable v-ripple>
+          <q-item-section avatar>
+            <q-icon name="shopping_cart" />
+          </q-item-section>
+          <q-item-section>Narudžbe</q-item-section>
+        </q-item>
+        <q-item to="/o_nama" clickable v-ripple>
+          <q-item-section avatar>
+            <q-icon name="info" />
+          </q-item-section>
+          <q-item-section>O Nama</q-item-section>
+        </q-item>
+        <q-item to="/login" clickable v-ripple>
+          <q-item-section avatar>
+            <q-icon name="login" />
+          </q-item-section>
+          <q-item-section>Login</q-item-section>
+        </q-item>
+        <q-item to="/registracija" clickable v-ripple>
+          <q-item-section avatar>
+            <q-icon name="person_add" />
+          </q-item-section>
+          <q-item-section>Registracija</q-item-section>
         </q-item>
       </q-list>
     </q-drawer>
@@ -45,23 +72,8 @@
 <script setup>
 import { ref } from 'vue'
 
-defineOptions({
-  name: 'MainLayout'
-})
-
-const linksList = [
-  { title: 'Naslovnica', caption: 'Početna stranica', icon: 'home', link: '/' },
-  { title: 'Popis usluga', caption: 'Pregled svih knjiga', icon: 'menu_book', link: '/popis_knjiga' },
-  { title: 'Pretraživanje', caption: 'Pronađite knjigu', icon: 'search', link: '/pretrazivanje' },
-  { title: 'O nama', caption: 'Informacije o knjižnici', icon: 'info', link: '/o_nama' },
-  { title: 'Lokacija', caption: 'Naša lokacija', icon: 'location_on', link: '/lokacija' },
-  { title: 'Login', caption: 'Prijava korisnika', icon: 'login', link: '/login' },
-  { title: 'Registracija', caption: 'Kreirajte račun', icon: 'person_add', link: '/registracija' },
-];
-
 const leftDrawerOpen = ref(false)
-
-function toggleLeftDrawer () {
+function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value
 }
 </script>
